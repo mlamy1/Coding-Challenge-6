@@ -47,3 +47,13 @@ function calculateTotalHours(employeeName) {
     console.log(`${employeeName} worked ${totalHours} hours total.`); // Message will display.       
 }
 calculateTotalHours('Terry'); // Example employee. 
+
+
+//Task 6: Create a Function to List Employees with Free Days
+
+function listAvailableEmployees(day) {
+    const availableEmployees = employees.filter (employee => !employee.shifts.some(shift => shift.day === day)); // code used to find employees that dont have a shift for that day. 
+    console.log(`The folloing employees are avaiable on ${day}:`); // message will appear if employees are avaialbe. 
+    availableEmployees.forEach(employee => console.log(employee.name));
+}
+listAvailableEmployees('Monday'); // Example day
