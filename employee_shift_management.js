@@ -35,3 +35,15 @@ function assignShift(employeeName, day, hours) {
 }
 assignShift('Eboni', 'Tuesday', 4);  // Example shift. 
 
+// Task 4: Create a Function to Calculate Total Hours Worked
+
+function calculateTotalHours(employeeName) {
+    let employee = employees.find( employee => employee.name === employeeName); // code used to find employee name in array. 
+    if (!employee) { //If employee name is not found,
+        console.log(`Employee ${employeeName} not found.`); // this message will display. 
+        return 0;
+    }
+    const totalHours = employee.shifts.reduce((sum, shift) => sum + shift.hours, 0); // code used to calculate total hours worked
+    console.log(`${employeeName} worked ${totalHours} hours total.`); // Message will display.       
+}
+calculateTotalHours('Terry'); // Example employee. 
